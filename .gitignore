@@ -1,0 +1,25 @@
+## .NET / Visual Studio
+bin/
+obj/
+out/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+.vs/
+.vscode/
+*.log
+
+## Rider
+.idea/
+
+## EF Core
+# (migrations ARE committed — they are source. Only ignore local tool output.)
+
+## Local secrets — never commit real connection strings / client secrets
+appsettings.*.local.json
+secrets.json
+
+## OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,57 @@
+@host = http://localhost:5099
+
+### List clients (paged + filter). Try ?keyword=Acme&status=ActiveClient&page=1&pageSize=20
+GET {{host}}/api/clients?pageSize=20
+
+### Get one client (replace the id with one from the list)
+GET {{host}}/api/clients/REPLACE_WITH_ID
+
+### Create an individual client
+POST {{host}}/api/clients
+Content-Type: application/json
+
+{
+  "clientType": "Individual",
+  "status": "ActiveClient",
+  "firstName": "Alice",
+  "lastName": "Walker",
+  "email": "alice@example.com",
+  "phone": "+61 400 555 111",
+  "address": { "city": "Brisbane", "state": "QLD", "country": "Australia" }
+}
+
+### Create an organization client
+POST {{host}}/api/clients
+Content-Type: application/json
+
+{
+  "clientType": "Organization",
+  "status": "NewIntake",
+  "organizationName": "Globex Corporation",
+  "companyNumber": "99 888 777 666",
+  "email": "legal@globex.example"
+}
+
+### Update a client
+PUT {{host}}/api/clients/REPLACE_WITH_ID
+Content-Type: application/json
+
+{
+  "status": "OnHold",
+  "firstName": "Alice",
+  "lastName": "Walker",
+  "phone": "+61 400 999 000"
+}
+
+### Add a contact to a client
+POST {{host}}/api/clients/REPLACE_WITH_ID/contacts
+Content-Type: application/json
+
+{
+  "name": "Bob Vance",
+  "relationshipType": "Billing Contact",
+  "email": "bob@example.com"
+}
+
+### Archive a client
+POST {{host}}/api/clients/REPLACE_WITH_ID/archive
