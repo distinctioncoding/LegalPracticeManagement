@@ -7,8 +7,7 @@ exactly as Volume 2 prescribes — deliberately simple enough for a junior full-
 > **Status:** This repo is an *initial code base + one reference feature*. The **Client
 > module** is implemented end-to-end (API → Application → Domain → Infrastructure → tests)
 > to show the pattern every other module should follow. Other modules (Intake, Matter,
-> Tasks, Deadlines, Documents…) are intentionally **not** built yet. See
-> [`FEATURE_EXPLANATION.md`](FEATURE_EXPLANATION.md) for a full walkthrough.
+> Tasks, Deadlines, Documents…) are intentionally **not** built yet.
 
 ## Tech stack
 
@@ -16,7 +15,7 @@ exactly as Volume 2 prescribes — deliberately simple enough for a junior full-
 |-----------------|----------------------------------------------------|
 | Backend         | ASP.NET Core Web API (.NET 9)                      |
 | Data            | EF Core + **Azure SQL** (SQL Server provider)      |
-| Auth            | _Deferred_ — endpoints are open for now (Entra ID planned) |
+| Auth            | ASP.NET Identity                                   |
 | Files (later)   | Azure Blob Storage                                 |
 | Validation      | Plain code inside the services                     |
 | Docs            | Swagger UI                                         |
