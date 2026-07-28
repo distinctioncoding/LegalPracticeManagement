@@ -2,7 +2,6 @@
 
 ASP.NET Core Web API for the law-firm practice management system described in the BRD
 (Vol 1), Architecture (Vol 2), and Functional Spec (Vol 3). Built as a **modular monolith**
-exactly as Volume 2 prescribes — deliberately simple enough for a junior full-stack team.
 
 > **Status:** This repo is an *initial code base + one reference feature*. The **Client
 > module** is implemented end-to-end (API → Application → Domain → Infrastructure → tests)
@@ -72,10 +71,6 @@ Three demo clients are seeded automatically and you can call every endpoint dire
    dotnet ef database update --project src/LawFirm.Infrastructure --startup-project src/LawFirm.Api
    ```
 3. `dotnet run`.
-
-> **Auth is deferred.** Microsoft Entra ID (bearer-token validation) and role-based
-> restrictions are planned but intentionally not wired up yet — add them before any non-local
-> environment.
 
 ## Where to go next
 
